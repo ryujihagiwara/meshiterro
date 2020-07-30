@@ -23,6 +23,10 @@ class PostImagesController < ApplicationController
     @post_comment=PostComment.new
   end
 
+  def destroy
+    @post_image=PostImage.find(params[:id])
+  end
+
   private
   def post_image_params
   	params.require(:post_image).permit(:shop_name, :image, :caption)
